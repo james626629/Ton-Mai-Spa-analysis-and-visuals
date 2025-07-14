@@ -38,7 +38,7 @@ df.to_csv(csv_filename, index=False)
 
 # --- Visualization ---
 # Use a context manager for styling to ensure it's applied
-with sns.axes_style("darkgrid"):
+with sns.axes_style("whitegrid"):
     # Reshape the DataFrame for comparative plotting
     df_melted = df.melt(id_vars=['Year'], value_vars=['Cash Flow (THB)', 'Accumulated Cash Flow (THB)'],
                         var_name='Flow Type', value_name='Amount (THB)')
