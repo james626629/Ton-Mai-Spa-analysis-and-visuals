@@ -37,7 +37,19 @@ csv_filename = 'ton_mai_spa_phuket_financial_projection.csv' # edit name for new
 df.to_csv(csv_filename, index=False)
 
 # --- Visualization ---
-sns.set_style("whitegrid")
+# Set the style to dark for the plot
+plt.style.use('dark_background')
+plt.rcParams.update({
+    "figure.facecolor":  (0.12, 0.12, 0.12, 1),
+    "axes.facecolor":    (0.12, 0.12, 0.12, 1),
+    "axes.edgecolor":    "white",
+    "axes.labelcolor":   "white",
+    "xtick.color":       "white",
+    "ytick.color":       "white",
+    "text.color":        "white",
+    "axes.titlecolor":   "white"
+})
+
 
 # Reshape the DataFrame for comparative plotting
 df_melted = df.melt(id_vars=['Year'], value_vars=['Cash Flow (THB)', 'Accumulated Cash Flow (THB)'],
@@ -56,9 +68,9 @@ plt.xticks(rotation=45)
 plt.tight_layout()
 
 # Save the figure
-plt.savefig('cash_flow_comparative_visualization.png')
+plt.savefig('cash_flow_comparative_visualization_dar.png')
 
 # Show the plot
 plt.show()
 
-print("Comparative visualization has been generated and saved as 'cash_flow_comparative_visualization.png'")
+print("Comparative visualization has been generated and saved as 'cash_flow_comparative_visualization_dar.png'")
