@@ -1,0 +1,8 @@
+docs: Update README.md with comprehensive project details
+
+This commit updates the README.md file to provide a more comprehensive overview of the project.
+It includes:
+- A detailed project overview section.
+- A comprehensive list of contents in the repository.
+- Instructions on how to use and replicate the analysis and visualizations.
+- Sections for contributing and contact information.

@@ -6,11 +6,11 @@ import seaborn as sns
 years = list(range(0, 11))
 
 # Initial investment at year 0
-initial_investment = -10000000 # THB
+initial_investment = -30000000 # THB
 
 # Annual revenue and costs
 annual_revenue = 34000000  # THB
-annual_operating_cost = 0.6 * annual_revenue  # 60% of revenue
+annual_operating_cost = 0.6 * annual_revenue  # 60% of revenue; i changed this from 60% to 66% from _2.png to _3.png
 
 # Calculate annual net cash flow after operating costs
 annual_net_cash_flow = annual_revenue - annual_operating_cost
@@ -68,9 +68,9 @@ plt.xticks(rotation=45)
 plt.tight_layout()
 
 # Save the figure
-plt.savefig('cash_flow_comparative_visualization_dar_10thb.png')
+plt.savefig('cash_flow_comparative_visualization_dar_10thb_2.png')
 
 # Show the plot
 plt.show()
 
-print("Comparative visualization has been generated and saved as 'cash_flow_comparative_visualization_dar_10thb.png'")
+print("Comparative visualization has been generated and saved as 'cash_flow_comparative_visualization_dar_10thb_2.png'")
