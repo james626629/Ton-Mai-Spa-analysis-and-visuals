@@ -3,10 +3,10 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # --- Financial Data Definition ---
-# This script visualizes the cash flow for a franchisee over a 10-year period.
+# This script visualizes the cash flow for a franchisee over a 5-year period.
 # The calculations are based on the cost analysis provided in 'Cost Analysis - Cost analysis test.csv'.
 
-years = list(range(0, 11))  # Year 0 for initial investment, then 10 years of operation
+years = list(range(0, 6))  # Year 0 for initial investment, then 5 years of operation
 
 # --- Initial Investment Calculation ---
 # This is the sum of all one-time costs required to start the franchise.
@@ -36,8 +36,8 @@ initial_investment = -14320000  # THB
 # 7. Annual Net Profit: 10,080,000 THB- 2,210,000 THB = 7,870,000 THB 
 annual_net_profit = 7870000  # THB 
 
-# Prepare cash flow list: Year 0 is the initial investment, followed by 10 years of profit
-cash_flows = [initial_investment] + [annual_net_profit] * 10
+# Prepare cash flow list: Year 0 is the initial investment, followed by 5 years of profit
+cash_flows = [initial_investment] + [annual_net_profit] * 5
 
 # Calculate the accumulated cash flow over the years
 accumulated_cash_flow = []
@@ -54,7 +54,7 @@ df = pd.DataFrame({
 })
 
 # Save the DataFrame to a CSV file for record-keeping
-csv_filename = 'franchisee_financial_projection.csv'
+csv_filename = 'franchisee_financial_projection_5_years.csv'
 df.to_csv(csv_filename, index=False)
 
 # --- Visualization ---
@@ -82,14 +82,14 @@ plt.figure(figsize=(18, 8))
 sns.barplot(x='Year', y='Amount (THB)', hue='Flow Type', data=df_melted, palette='magma')
 
 # Set plot titles and labels
-plt.title('Franchisee Cash Flow Analysis (10 Years)', fontsize=18)
-plt.xlabel('Year', fontsize=15)
-plt.ylabel('Amount (THB)', fontsize=15)
+plt.title('Franchisee Cash Flow Analysis (5 Years)', fontsize=18)
+plt.xlabel('Year', fontsize=20)
+plt.ylabel('Amount (THB) in 10 Millions', fontsize=20)
 plt.xticks(rotation=45)
 plt.tight_layout()
 
 # Save the generated plot to a file
-output_image_filename = 'franchisee_cash_flow_comparative_visualization.png'
+output_image_filename = 'franchisee_cash_flow_comparative_visualization_5_years.png'
 plt.savefig(output_image_filename)
 
 # Display the plot
